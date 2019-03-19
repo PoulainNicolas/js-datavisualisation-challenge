@@ -403,6 +403,8 @@ svg = dimple.newSvg("#test", "100%", 400);
 // Requête Ajax
 function recupDonnees(){
     // mettre le constructeur dans la fonction sinon chart pas défini si ds fction onreadystatechange
+    // vider data sinon addition
+    data=[];
     let chart = new dimple.chart(svg, data);
 
     let xhr = new XMLHttpRequest();
@@ -435,6 +437,8 @@ setTimeout(function(){
     // chart.data.selectAll('*').remove();
     // chart.series.forEach(function(series){
     //     series.shapes.remove();
+    // delete data;
+    // 
     // });
     // vider tableau data
     // data=[];
@@ -444,10 +448,10 @@ setTimeout(function(){
     // chart.svg.selectAll('*').detach();
     // chart.svg.selectAll('*').empty();
     recupDonnees();
-    
+    // delete chart.data;
+
     
 },2000);
-
 }
 recupDonnees();
 
